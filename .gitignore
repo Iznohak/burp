@@ -20,12 +20,15 @@
 /autom4te.cache
 /backup_tool_script
 /burp
+/burp.conf
 /burp_ca
 /burp-coverage/
 /burp-coverage.info
 /burp-coverage-clean.info
 /burp-cross-tools
 /burp-depkgs
+/burp-server.conf
+/CA.cnf
 /config.h.in
 /config.log
 /config.out
