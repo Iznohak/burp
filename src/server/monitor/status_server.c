@@ -290,17 +290,16 @@ static int parse_client_data(struct asfd *srfd,
 			goto end;
 		}
 	}
-	if(logfile)
+	if(logfile && !browse)
 	{
-		if(strcmp(logfile, "manifest")
-		  && strcmp(logfile, "backup")
+		if(strcmp(logfile, "backup")
 		  && strcmp(logfile, "restore")
 		  && strcmp(logfile, "verify")
 		  && strcmp(logfile, "backup_stats")
 		  && strcmp(logfile, "restore_stats")
 		  && strcmp(logfile, "verify_stats"))
 		{
-			if(json_send_warn(srfd, "File not supported"))
+			if(json_send_warn(srfd, "Log file not supported"))
 				goto error;
 			goto end;
 		}

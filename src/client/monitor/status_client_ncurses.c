@@ -416,7 +416,6 @@ static const char *logop_to_text(uint16_t logop)
 {
 	switch(logop)
 	{
-		case BU_MANIFEST:	return "Manifest";
 		case BU_LOG_BACKUP:	return "Backup log";
 		case BU_LOG_RESTORE:	return "Restore log";
 		case BU_LOG_VERIFY:	return "Verify log";
@@ -519,7 +518,6 @@ static int selindex_from_lline(struct sel *sel)
 static void print_logs_list(struct sel *sel, int *x, int col)
 {
 	print_logs_list_line(sel, BU_LIVE_COUNTERS, x, col);
-	print_logs_list_line(sel, BU_MANIFEST, x, col);
 	print_logs_list_line(sel, BU_LOG_BACKUP, x, col);
 	print_logs_list_line(sel, BU_LOG_RESTORE, x, col);
 	print_logs_list_line(sel, BU_LOG_VERIFY, x, col);
@@ -936,8 +934,6 @@ static int request_status(struct asfd *asfd,
 				lname="restore";
 			else if(sel->logop & BU_LOG_VERIFY)
 				lname="verify";
-			else if(sel->logop & BU_MANIFEST)
-				lname="manifest";
 			else if(sel->logop & BU_STATS_RESTORE)
 				lname="restore_stats";
 			else if(sel->logop & BU_STATS_VERIFY)
